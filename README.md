@@ -14,7 +14,7 @@ Product Service via WebClient and publishes cart events to Kafka.
 - Maven
 
 ## Architecture Role
-- **REST API** — exposes cart endpoints on port `8082`
+- **REST API** — exposes cart endpoints on port `7082`
 - **Kafka Producer** — publishes `ITEM_ADDED` events to `cart-events` topic
 - **WebClient** — calls Product Service to fetch product info and validate stock
 - **Async Processing** — parallel stock validation using CompletableFuture
@@ -49,7 +49,7 @@ CREATE TABLE cart_items (
 ## Configuration
 Edit `src/main/resources/application.properties`:
 ```properties
-server.port=8082
+server.port=7082
 spring.datasource.url=jdbc:sqlserver://localhost:1433;databaseName=CartDB;encrypt=false;trustServerCertificate=true
 spring.datasource.username=username
 spring.datasource.password=YourStrong@Passw0rd
